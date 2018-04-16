@@ -1,0 +1,6 @@
+https://ieeexplore.ieee.org/document/5662313/
+https://en.wikipedia.org/wiki/Query_expansion
+https://docs.oracle.com/cd/E87544_01/pt856pbr1/eng/pt/tcub/concept_DynamicQueryExpansion-957896.html
+https://www.researchgate.net/publication/251979181_Dynamic_Query_Expansion_for_Efficient_Information_Retrieval
+https://arxiv.org/ftp/arxiv/papers/1104/1104.3213.pdf
+https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/13021.pdf
