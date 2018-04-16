@@ -53,6 +53,12 @@ class SubredditObject(object):
         self.filter_check(filter)
         return [submission for submission in self.subreddit.top(limit=n, time_filter=filter)]
 
+    def get_search_submissions(self, term='', filter='all'):
+        self.filter_check(filter)
+        if not isinstance(term, str):
+            raise ValueError('Invalid term string')
+        return [submission for submission in self.subreddit.search(term.lower())]
+
     def get_hot_titles(self, n):
         """
         Return list of top n hot titles
@@ -82,3 +88,4 @@ class SubredditObject(object):
             for comment in submission.comments.list():
                 coms.append(comment.body)
         return coms
+
