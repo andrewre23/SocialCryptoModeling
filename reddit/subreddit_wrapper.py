@@ -1,5 +1,10 @@
 # import praw
 
+
+import configparser
+config = configparser.ConfigParser()
+config.read('./mydata.cfg')
+
 client_id = 'ZPCLNw8081MjQQ'
 client_secret = 'hWDqk5ZpXrc5BISDQUl7ZbPysgc'
 user_agent = 'socialcryptomodeling:socialcryptomodeling:1.0.0 (by /u/socialcryptomodeling)'
@@ -9,12 +14,13 @@ class SubredditObject(object):
 
     def __init__(self, subreddit=''):
         import praw
-        self.reddit = praw.Reddit(client_id=client_id,
-                                  client_secret=client_secret,
-                                  user_agent=user_agent)
-        self.client_id = client_id
-        self.client_secret = client_secret
-        self.user_agent = user_agent
+        self.client_id = config['reddit']['client_id']
+        self.client_secret = config['reddit']['client_secret']
+        self.user_agent = config['reddit']['user_agent']
+        self.reddit = praw.Reddit(client_id=self.client_id,
+                                  client_secret=self.client_secret,
+                                  user_agent=self.user_agent)
+
         if type(subreddit) != str:
             raise ValueError('subreddit must be string object')
         self.subreddit = self.reddit.subreddit(subreddit.lower())
