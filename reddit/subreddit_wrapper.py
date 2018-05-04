@@ -1,7 +1,9 @@
 # import praw
 
-
+from datetime import datetime
+import json
 import configparser
+
 config = configparser.ConfigParser()
 config.read('./mydata.cfg')
 
@@ -72,3 +74,46 @@ class SubredditObject(object):
                 coms.append(comment.body)
         return coms
 
+    def convert_from_utc(self, utc_time):
+        """
+        Convert from UTC to datetime object
+        """
+        return datetime.utcfromtimestamp(utc_time)
+
+    def write_top_submissions(self, n):
+        """
+        Write JSON file that contains all n top submissions for subreddit
+        """
+        if not (type(n) == int and n > 0):
+            raise ValueError("n must be integer larger than 0")
+        submissions = self.get_top_submissions(n)
+        all_subs = {}
+        for num in range(n):
+            # iterate through all submissions and extract information to
+            # write to JSON object
+            sub = submissions[num]
+            # create dict to hold all data for submission
+            output = {}
+            # add submission-level data to output data
+            output['created'] = str(self.convert_from_utc(sub.created_utc))
+            output['title'] = sub.title
+            output['num_comments'] = sub.num_comments
+            output['view_count'] = sub.view_count
+            output['upvote_ratio'] = sub.upvote_ratio
+            output['score'] = sub.score
+            output['num_crossposts'] = sub.num_crossposts
+            # create comment section and add all comments
+            sub.comments.replace_more(limit=n)
+            comments = {}
+            coms = sub.comments[:]
+            for com in range(len(coms)):
+                comments[com] = {}
+                comments[com]['created'] = str(self.convert_from_utc(coms[com].created))
+                comments[com]['body'] = coms[com].body
+                comments[com]['score'] = coms[com].score
+                comments[com]['replies'] = [reply.body for reply in coms[com].replies]
+            output['comments'] = comments
+            # add to master list
+            all_subs[num + 1] = output
+        with open('{}.json'.format(self.subreddit.display_name.lower()), 'w') as outfile:
+            json.dump(all_subs, outfile)
