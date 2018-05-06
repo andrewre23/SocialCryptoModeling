@@ -3,6 +3,7 @@
 from datetime import datetime
 import json
 import configparser
+import praw
 
 config = configparser.ConfigParser()
 config.read('./mydata.cfg')
@@ -12,10 +13,32 @@ client_secret = 'hWDqk5ZpXrc5BISDQUl7ZbPysgc'
 user_agent = 'socialcryptomodeling:socialcryptomodeling:1.0.0 (by /u/socialcryptomodeling)'
 
 
+class RedditCollector(object):
+    """
+    Object to house functionality for entire Reddit data retrieval
+    """
+
+    def __init__(self):
+        pass
+
+    def extract_top_submissions(self, n):
+        """
+        Write JSON file for top n submissions for each subreddit in subreddits.txt
+        """
+        with open('reddit/subreddits.txt', 'r') as f:
+            for line in f:
+                subreddit = line.strip()
+                print('Extracting top {} comments for r/{}'.format(n, subreddit.capitalize()))
+                sub = SubredditObject(subreddit=subreddit)
+                sub.write_top_submissions(n)
+
+
 class SubredditObject(object):
+    """
+    Object to house functionality for each individual Subreddit
+    """
 
     def __init__(self, subreddit=''):
-        import praw
         self.client_id = config['reddit']['client_id']
         self.client_secret = config['reddit']['client_secret']
         self.user_agent = config['reddit']['user_agent']
@@ -98,22 +121,19 @@ class SubredditObject(object):
             output['created'] = str(self.convert_from_utc(sub.created_utc))
             output['title'] = sub.title
             output['num_comments'] = sub.num_comments
-            output['view_count'] = sub.view_count
             output['upvote_ratio'] = sub.upvote_ratio
             output['score'] = sub.score
             output['num_crossposts'] = sub.num_crossposts
             # create comment section and add all comments
             sub.comments.replace_more(limit=n)
-            comments = {}
-            coms = sub.comments[:]
-            for com in range(len(coms)):
-                comments[com] = {}
-                comments[com]['created'] = str(self.convert_from_utc(coms[com].created))
-                comments[com]['body'] = coms[com].body
-                comments[com]['score'] = coms[com].score
-                comments[com]['replies'] = [reply.body for reply in coms[com].replies]
+            comments = [
+                (str(self.convert_from_utc(comment.created)),
+                 comment.body,
+                 comment.score)
+                for comment in sub.comments.list()
+            ]
             output['comments'] = comments
             # add to master list
             all_subs[num + 1] = output
-        with open('{}.json'.format(self.subreddit.display_name.lower()), 'w') as outfile:
+        with open('reddit/submissions/{}.json'.format(self.subreddit.display_name.lower()), 'w') as outfile:
             json.dump(all_subs, outfile)

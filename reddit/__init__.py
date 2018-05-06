@@ -1,1 +1,1 @@
-from .subreddit_wrapper import SubredditObject
+from .reddit_tools import SubredditObject, RedditCollector
