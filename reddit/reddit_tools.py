@@ -4,6 +4,7 @@ from datetime import datetime
 import json
 import configparser
 import praw
+from nltk.corpus import stopwords
 
 config = configparser.ConfigParser()
 config.read('./mydata.cfg')
@@ -11,6 +12,8 @@ config.read('./mydata.cfg')
 client_id = 'ZPCLNw8081MjQQ'
 client_secret = 'hWDqk5ZpXrc5BISDQUl7ZbPysgc'
 user_agent = 'socialcryptomodeling:socialcryptomodeling:1.0.0 (by /u/socialcryptomodeling)'
+
+sw = stopwords.words('english')
 
 
 class RedditCollector(object):
@@ -31,7 +34,7 @@ class RedditCollector(object):
                 subreddits.append(line.strip())
         return subreddits
 
-    def extract_top_submissions(self, n):
+    def get_top_submissions(self, n):
         """
         Write JSON file for top n submissions for each subreddit in subreddits.txt
         """
@@ -40,7 +43,7 @@ class RedditCollector(object):
             sub = SubredditObject(subreddit=subreddit)
             sub.write_top_submissions(n)
 
-    def extract_words(self):
+    def get_submission_words(self):
         """
         Extract all words from each of the submissions in the top n submissions files
         """
@@ -127,17 +130,6 @@ class SubredditObject(object):
         """
         return datetime.utcfromtimestamp(utc_time)
 
-    def read_top_submissions(self):
-        """
-        Return dictionary of JSON file of n submissions
-        """
-        try:
-            with open('reddit/submissions/{}.json'.format(self.subreddit.display_name.lower())) as f:
-                return (json.load(f))
-        except FileNotFoundError:
-            # error if file not found in submissions folder
-            print('Error: submission file not found for {}'.format(self.subreddit.display_name.lower()))
-
     def write_top_submissions(self, n):
         """
         Write JSON file that contains all n top submissions for subreddit
@@ -182,7 +174,18 @@ class SubredditObject(object):
         with open('reddit/submissions/{}.json'.format(self.subreddit.display_name.lower()), 'w') as outfile:
             json.dump(all_subs, outfile)
 
-    def extract_words_from_submissions(self):
+    def read_top_submissions(self):
+        """
+        Return dictionary of JSON file of n submissions
+        """
+        try:
+            with open('reddit/submissions/{}.json'.format(self.subreddit.display_name.lower())) as f:
+                return (json.load(f))
+        except FileNotFoundError:
+            # error if file not found in submissions folder
+            print('Error: submission file not found for {}'.format(self.subreddit.display_name.lower()))
+
+    def write_words_from_submissions(self):
         """
         Extract all words for processing from previous submission data
         """
@@ -207,3 +210,48 @@ class SubredditObject(object):
                 json.dump(data, outfile)
         except:
             print("Error during word extraction")
+
+    def read_words_from_submissions(self):
+        """
+        Return dictionary of JSON file of list of words
+        """
+        try:
+            with open('reddit/cleanedwords/{}.json'.format(self.subreddit.display_name.lower())) as f:
+                return (json.load(f))
+        except FileNotFoundError:
+            # error if file not found in cleanedwords folder
+            print('Error: file of words not found for {}'.format(self.subreddit.display_name.lower()))
+
+    def get_word_counts(self):
+        """
+        Get word counts from extracted words
+        """
+        wordlist = self.read_words_from_submissions()['words']
+        try:
+            wordcounts = {}
+            for word in wordlist:
+                # iterate through all words in submission
+                wordcounts[word] = wordcounts.get(word, 0) + 1
+            return wordcounts
+        except:
+            print("Error during word extraction")
+
+    def get_top_words(self, n):
+        """
+        Get top n most common words from list of extracted words
+        """
+        # remove stopwords
+        allwords = self.get_word_counts()
+        counts = {}
+        for word in allwords.keys():
+            if word not in sw:
+                counts[word] = allwords[word]
+        # first, determine word at nth position
+        sortedcounts = sorted(counts, key=counts.get, reverse=True)
+        topcount = counts[sortedcounts[n - 1]]
+        output = {}
+        # select subset of words with >= topcount instances
+        for key in counts.keys():
+            if counts[key] >= topcount:
+                output[key] = counts[key]
+        return output
