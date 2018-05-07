@@ -15,54 +15,7 @@ user_agent = 'socialcryptomodeling:socialcryptomodeling:1.0.0 (by /u/socialcrypt
 
 sw = stopwords.words('english')
 
-
-class RedditCollector(object):
-    """
-    Object to house functionality for entire Reddit data retrieval
-    """
-
-    def __init__(self):
-        pass
-
-    def get_subreddit_list(self):
-        """
-        Return list of subreddits saved in subreddit file
-        """
-        subreddits = []
-        with open('reddit/subreddits.txt', 'r') as f:
-            for line in f:
-                subreddits.append(line.strip())
-        return subreddits
-
-    def get_top_submissions(self, n):
-        """
-        Write JSON file for top n submissions for each subreddit in subreddits.txt
-        """
-        for subreddit in self.get_subreddit_list():
-            print('Extracting top {} submissions for r/{}'.format(n, subreddit.capitalize()))
-            sub = SubredditObject(subreddit=subreddit)
-            sub.write_top_submissions(n)
-
-    def get_submission_words(self):
-        """
-        Extract all words from each of the submissions in the top n submissions files
-        """
-        for subreddit in self.get_subreddit_list():
-            print('Extracting words from submissions for r/{}'.format(subreddit.capitalize()))
-            sub = SubredditObject(subreddit=subreddit)
-            sub.extract_words_from_submissions()
-
-    def get_top_words(self, n):
-        """
-        Extract top n words from each of the submissions in the submissions files
-        """
-        for subreddit in self.get_subreddit_list():
-            print('Extracting top {} words from submissions for r/{}'.format(n, subreddit.capitalize()))
-            sub = SubredditObject(subreddit=subreddit)
-            sub.write_top_words(n)
-
-
-class SubredditObject(object):
+class SubredditTool(object):
     """
     Object to house functionality for each individual Subreddit
     """
@@ -85,10 +38,6 @@ class SubredditObject(object):
         if filter not in [None, 'all', 'day', 'hour', 'month', 'week', 'year']:
             raise ValueError('filter must be one of: all|day|hour|month|week|year')
 
-    def get_hot_submissions(self, n):
-        # get n hot submissions
-        return [submission for submission in self.subreddit.hot(limit=n)]
-
     def get_top_submissions(self, n, filter='all'):
         # get n top submissions
         self.filter_check(filter)
@@ -101,27 +50,12 @@ class SubredditObject(object):
             raise ValueError('Invalid term string')
         return [submission for submission in self.subreddit.search(term.lower())]
 
-    def get_hot_titles(self, n):
-        """
-        Return list of top n hot titles
-        """
-        return [submission.title for submission in self.get_hot_submissions(n=n)]
-
     def get_top_titles(self, n, filter='all'):
         """
         Return list of top n top titles
         """
         self.filter_check(filter)
         return [submission.title for submission in self.get_top_submissions(n=n, filter=filter)]
-
-    def get_hot_comments(self, n, limit=None, threshold=0):
-        # get comments from n hot submissions
-        coms = []
-        for submission in self.get_hot_submissions(n):
-            submission.comments.replace_more(limit=limit, threshold=threshold)
-            for comment in submission.comments.list():
-                coms.append(comment.body)
-        return coms
 
     def get_top_comments(self, n, filter='all', limit=None, threshold=0):
         # get comments from n top submissions
@@ -277,3 +211,14 @@ class SubredditObject(object):
                 json.dump(output, outfile)
         except:
             print("Error during top word extraction")
+
+    def read_top_words(self):
+        """
+        Return dictionary of JSON file of list of top words
+        """
+        try:
+            with open('reddit/topwords/{}.json'.format(self.subreddit.display_name.lower())) as f:
+                return (json.load(f))
+        except FileNotFoundError:
+            # error if file not found in cleanedwords folder
+            print('Error: file of words not found for {}'.format(self.subreddit.display_name.lower()))

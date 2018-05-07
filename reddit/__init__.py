@@ -1,1 +1,2 @@
-from .reddit_tools import SubredditObject, RedditCollector
+from .subreddit import SubredditTool
+from .reddittool import RedditTool
