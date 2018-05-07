@@ -1,0 +1,731 @@
+{
+	"1": {
+		"created": "2017-10-20 16:28:57",
+		"title": "How to Create an Ethereum Mining Calculator from Start to Finish",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 5,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"2": {
+		"created": "2018-03-20 04:34:51",
+		"title": "If anyone wants to learn how to build smart contracts I created the r/ethtuts subreddit for solidity tutorials to keep track of courses as I learn to program on the blockchain. It's kind of a guide. Please add to the mix or leave a review in the comments if you've completed a tutorial on there.",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 4,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"3": {
+		"created": "2018-02-03 16:11:28",
+		"title": "4 Common lies Bitcoin and Cryptocurrency sceptics tell themselves",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 5,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"4": {
+		"created": "2017-12-29 14:35:43",
+		"title": "Weekly /r/CryptoGuides Discussion - December 29, 2017",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 4,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"5": {
+		"created": "2017-10-17 10:57:38",
+		"title": "[Guide] How to view (aka \"watch\") ERC20 tokens in Ethereum Wallet/Mist",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 6,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"6": {
+		"created": "2017-10-12 08:58:05",
+		"title": "Continue with Ethereum & Solidity development on Windows - part 2",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 4,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"7": {
+		"created": "2017-10-11 16:41:22",
+		"title": "Get started with Ethereum & Solidity on Windows",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 4,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"8": {
+		"created": "2017-10-09 01:17:42",
+		"title": "[Guide] Trading concepts and GDAX Crypto trading platform overview",
+		"num_comments": 1,
+		"upvote_ratio": 1.0,
+		"score": 5,
+		"num_crossposts": 0,
+		"comments": [["2017-10-09 09:20:10", "This playlist is designed to help you get to know GDAX/Coinbase and show you how to trade on the GDAX exchange. ", 1]]
+	},
+	"9": {
+		"created": "2017-09-23 11:49:09",
+		"title": "[GUIDE] How to Install a Gridcoin Wallet on a Raspberry Pi",
+		"num_comments": 10,
+		"upvote_ratio": 0.81,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": [["2017-09-24 09:30:40", "Great guide, GRC used to be a big part of my portfolio.", 1], ["2017-09-25 22:35:55", "How does Gridcoin actually generate any money?  Is it just worth something because people buy it?", 1], ["2017-09-24 22:17:02", "Thanks! Out of curiosity when did you have more Gridcoin?", 1], ["2017-09-26 04:53:46", "What exactly do you mean by generate any money, If you mean value then it is like all current forms of money in that it's just what we put value on.", 1], ["2017-09-24 22:23:59", "Bought some in May after the big spike, rode it up the next one and took profits.  It got cut when I consolidated my portfolio and stopped holding dozens of alt coins. Still a great project though.", 1], ["2017-09-26 05:04:10", "I mean, why do people buy GRC?  It makes sense to be awarded it if it has value, but what do you get from buying/owning it?", 1], ["2017-09-24 22:53:33", "Yeah, I really like Gridcoin and I wish more people knew about it.", 1], ["2017-09-27 09:11:23", "Well some buy it because of passion in Gridcoin. Some buy Gridcoin because they think the price will go up. As to what do you get for owning it, nothing really. That goes with all money. All you get is perceived value. Take for example the US dollar. The US dollar is valuable because people say it has value. It goes with all currencies. Value is just what we say it is.", 1], ["2017-09-27 22:22:55", "It's not really a question about the philosophy of money.  Money does have intrinsic value in the sense that it's a convenience.  You don't have to haul around gold bars all day, and that's worth something.  USD is also *somewhat* secure in ways that material value isn't.  It's also backed by one of the worlds largest governments.  None of that is \"because people say it has value\".\n\nWith crypto, you can get the added value of:\n\n1) a secure decentralized public ledger\n\n2) anonymity\n\n3) trustless transactions\n\nand much more.  It seems that with GRC you don't really benefit from any of these since it's not a good coin to transact in, store value in, or speculate on since there actually is no intrinsic value.  It's not a resource, you can't *do* anything with it besides send it around, and even sending it around isn't as valuable as something like an ERC20 token since the blockchain it's on isn't nearly as secure as Ethereum's.\n\nMost coins will pay dividends, allow for governance, behave as a platform-specific currency or resource, or have some other *useful* aspect.  GRC seems like it's just Dogecoin but without the memes or community behind it.  Speculating on it's value as an investment would be pure gambling, and buying it out of passion is simply dumb from a financial point of view since there's no expectation of the value going up since there's no value to begin with.", 1], ["2017-09-28 05:43:14", "Well there is proof of research involved with Gridcoin. It basically supports science by using BOINC. Proof of Research proves that you did a certain amount of work with BOINC. BOINC helps scientist and mathematicians. As to dividends, Gridcoin does have PoS (proof of stake). So, It does have some useful features. You can see about it at www.Gridcoin.us ", 1]]
+	},
+	"10": {
+		"created": "2017-09-22 19:26:09",
+		"title": "[Guide] Ethereum \"Gas\" - How it Works",
+		"num_comments": 0,
+		"upvote_ratio": 0.76,
+		"score": 4,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"11": {
+		"created": "2018-04-23 09:58:41",
+		"title": "How To Quickly Buy Ether With Localethereum",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"12": {
+		"created": "2018-02-14 15:59:58",
+		"title": "[Guide]\u00abDAICO\u00bb Une autre forme de l'ICO",
+		"num_comments": 1,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": [["2018-02-15 14:06:38", "A good summary of the DAICO, once you opt for Google\u2019s almost seamless conversion of the article into English. The more start-ups that embrace this model the healthier this space will be, helping to revive the goal of more decentralisation by removing the scourge of ICO pumps and dumps, orchestrated on Telegram pump groups and via the increasingly inequitable main sale vs pre/private sale dichotomy.", 1]]
+	},
+	"13": {
+		"created": "2018-01-19 14:35:44",
+		"title": "Weekly /r/CryptoGuides Discussion - January 19, 2018",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"14": {
+		"created": "2018-01-17 14:07:55",
+		"title": "ICO Cybersecurity Best Practices: How to protect your ICO from hackers",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"15": {
+		"created": "2018-01-15 20:38:04",
+		"title": "How does the Blockchain Work? (Part 1)",
+		"num_comments": 1,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": [["2018-01-16 04:55:01", "Welcome to the first edition in the How to do an Initial Coin Offering series!\n\nInterested in learning more about blockchain? Check our other editorial articles [here](https://blockchainreview.io/)\n", 1]]
+	},
+	"16": {
+		"created": "2017-12-27 13:37:11",
+		"title": "ICO Analysis- Enigma Catalyst: the realm of crypto-trading machines",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"17": {
+		"created": "2017-12-22 14:35:53",
+		"title": "Weekly /r/CryptoGuides Discussion - December 22, 2017",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"18": {
+		"created": "2017-12-17 15:10:18",
+		"title": "[Analysis]About the whooping price surge of TRON (TRX)",
+		"num_comments": 0,
+		"upvote_ratio": 0.81,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"19": {
+		"created": "2017-12-12 05:24:48",
+		"title": "[Guides] Trading retracement using Fibonacci retracement levels",
+		"num_comments": 2,
+		"upvote_ratio": 0.81,
+		"score": 3,
+		"num_crossposts": 1,
+		"comments": [["2017-12-12 23:59:48", "This is excellent!", 2], ["2017-12-13 06:49:31", "Thank you for saying that! I am glad you liked it!", 1]]
+	},
+	"20": {
+		"created": "2017-11-17 14:35:42",
+		"title": "Weekly /r/CryptoGuides Discussion - November 17, 2017",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"21": {
+		"created": "2017-11-10 14:35:45",
+		"title": "Weekly /r/CryptoGuides Discussion - November 10, 2017",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"22": {
+		"created": "2017-11-03 14:35:42",
+		"title": "Weekly /r/CryptoGuides Discussion - November 03, 2017",
+		"num_comments": 2,
+		"upvote_ratio": 0.8,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": [["2017-11-04 04:42:41", "An ultra beginner guide to making money would be good.", 1], ["2017-11-04 21:52:20", "Making money how?  For \"ultra beginners\" I'd suggest a lemonade stand", 1]]
+	},
+	"23": {
+		"created": "2017-11-01 19:49:26",
+		"title": "How to view Ethereum tokens in Metamask",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"24": {
+		"created": "2017-11-01 17:33:33",
+		"title": "question Cant import private keys help!?",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"25": {
+		"created": "2017-10-13 14:35:52",
+		"title": "Weekly /r/CryptoGuides Discussion - October 13, 2017",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"26": {
+		"created": "2017-10-09 18:08:29",
+		"title": "[Guide] Ethereum's Proof of Stake Casper Enforcement part 2 of 2",
+		"num_comments": 4,
+		"upvote_ratio": 0.81,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": [["2017-10-10 09:57:11", "This is great stuff!  Subbed on youtube.  You should consider posting to Steemit too, could make a decent amount of money off of this stuff!", 3], ["2017-10-12 05:26:34", "Thanks for part 2! Much appreciated!", 2], ["2017-10-10 02:09:51", "This is Part 2 of 2: for part 1 (which focuses on how validators vote and the way blocks get added to the blockchain): https://youtu.be/-0gjZiSSa-I\n\n -one mistake in part 1 was how much Validators have to stake. I, unfortunately, said a really early estimate of 1000 ETH, but it is expected to be closer to 10 ETH.(sorry guys)\ncheck the description of the Youtube video for the references! and please subscribe if you found these explanations helpful. I plan on doing many more videos on Ethereum, bitcoin, and other up and coming crypto-concepts and their updates.\n\nAlso let me know if you have any questions, concerns, or thoughts. I always love helping anyone understand cryptocurrency as it is the future of assets and economics. Crypto is going to be crucial to understand for the future of Economics as we know it.", 1], ["2017-10-10 11:59:10", "Thanks, I am glad you liked it. I do post on Steemit, however, I am still trying to build a following in general so they tend to go under the radar unfotunately haha.\n", 1]]
+	},
+	"27": {
+		"created": "2017-10-09 17:30:17",
+		"title": "[Guide] Ethereum's Proof of Stake Casper explanation of voting and POS blockchain Pt1 of 2",
+		"num_comments": 1,
+		"upvote_ratio": 0.81,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": [["2017-10-10 01:35:46", "This is Part 1 of 2: \nCOrrection!!:\n-one mistake in part 1 was how much Validators have to stake. I, unfortunately, said a really early estimate of 1000 ETH, but it is expected to be closer to 10 ETH.(sorry guys)\n\nCheck the description of the Youtube video for the references! and please subscribe if you found these explanations helpful. I plan on doing many more videos on Ethereum, bitcoin, and other up and coming crypto-concepts and their updates.\nAlso let me know if you have any questions, concerns, or thoughts. I always love helping anyone understand cryptocurrency as it is the future of assets and economics. Crypto is going to be crucial to understand for the future of Economics as we know it.\n\nFor Part 2:\nhttps://youtu.be/j5rVmy_JM3Q\n      - this focuses on enforcement of POS Casper and how that creates the blockchain\n\nI will update this Video in 2018 when more details are finalized for Casper. so please do subscribe it is really appreciated. \nThanks for checking this post out!", 1]]
+	},
+	"28": {
+		"created": "2017-10-06 14:35:44",
+		"title": "Weekly /r/CryptoGuides Discussion - October 06, 2017",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"29": {
+		"created": "2017-10-04 02:07:34",
+		"title": "How to run two instances of Geth as two local nodes on a single Windows machine. Run Mist wallet to connect to one of the Geth instances, and send a payment from one account to another account.",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"30": {
+		"created": "2017-09-22 19:24:17",
+		"title": "[Guide] How To Get Live Prices on Excel",
+		"num_comments": 0,
+		"upvote_ratio": 0.81,
+		"score": 3,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"31": {
+		"created": "2018-04-25 06:56:56",
+		"title": "You Have to Have A personal Relationship With This Crypto Market",
+		"num_comments": 0,
+		"upvote_ratio": 0.75,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"32": {
+		"created": "2018-04-24 17:03:23",
+		"title": "How to change the future of cryptocurrency with the founder of Trust Wallet",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"33": {
+		"created": "2018-04-20 19:33:27",
+		"title": "HOW TO SECURE YOUR CRYPTOCURRENCY WALLET: 16 SIMPLE TIPS FOR BEGINNERS",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"34": {
+		"created": "2018-04-06 03:19:17",
+		"title": "What If They ICO?: How startup founders and investors are dealing with the ICO trend.",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"35": {
+		"created": "2018-03-30 17:53:16",
+		"title": "Centralization vs. Decentralization",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"36": {
+		"created": "2018-03-23 11:53:46",
+		"title": "[Guide] Guarda: How are the ETH transaction fees calculated?",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"37": {
+		"created": "2018-03-23 10:47:56",
+		"title": "Guide: How to claim Callisto coins? Explaining with Guarda Wallet for Android!",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"38": {
+		"created": "2018-03-22 10:52:53",
+		"title": "Private key security guide for Guarda wallets users! Stay in the full control of your wallet and assets!",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"39": {
+		"created": "2018-03-18 08:03:24",
+		"title": "How to create a Wallet on My Ether Wallet",
+		"num_comments": 0,
+		"upvote_ratio": 0.76,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"40": {
+		"created": "2018-03-09 16:40:01",
+		"title": "Canya||JD.com \"Disruptive Partnership \"",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"41": {
+		"created": "2018-03-02 19:24:41",
+		"title": "Dat FREE Crypto Air Drop Hustle !",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"42": {
+		"created": "2018-02-23 21:34:41",
+		"title": "Dat Crypto Pimp Game! (Decentralize Yo Hoes!) (Crypto Friends Only!)",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"43": {
+		"created": "2018-02-18 06:36:43",
+		"title": "8-week Ethereum Bootcamp Online",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"44": {
+		"created": "2018-01-31 10:20:42",
+		"title": "[Guide] BTCUSD, ETHUSD - Technical Price Analysis of January 30, 2018",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"45": {
+		"created": "2018-01-27 12:59:55",
+		"title": "[Guide] 2018 and ICO: the wind of change",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"46": {
+		"created": "2018-01-15 14:54:34",
+		"title": "Initial Coin Offerings and their regulations: the USA case",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"47": {
+		"created": "2018-01-05 14:35:52",
+		"title": "Weekly /r/CryptoGuides Discussion - January 05, 2018",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"48": {
+		"created": "2017-12-22 15:36:32",
+		"title": "Catching up to Initial Coin Offerings and their regulations, start here",
+		"num_comments": 0,
+		"upvote_ratio": 0.75,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"49": {
+		"created": "2017-12-16 04:37:15",
+		"title": "[Guide] How to place profit targets using Fibonacci extensions?",
+		"num_comments": 0,
+		"upvote_ratio": 0.76,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"50": {
+		"created": "2017-12-15 14:35:44",
+		"title": "Weekly /r/CryptoGuides Discussion - December 15, 2017",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"51": {
+		"created": "2017-12-10 02:39:32",
+		"title": "[Guide] Proof of Work (Begginers' guide)",
+		"num_comments": 3,
+		"upvote_ratio": 0.67,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": [["2017-12-14 11:31:25", "what a content!", 3], ["2017-12-10 10:40:17", "Thank you for giving your feedback guys so we can improve our work. This Tutorial is for you :)", 1], ["2017-12-17 08:34:47", "Thanks Badubad :)", 3]]
+	},
+	"52": {
+		"created": "2017-12-09 10:42:12",
+		"title": "[Guide] How to import a wallet from Mist/Ethereum wallet into MyEtherWallet.",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"53": {
+		"created": "2017-12-08 14:35:43",
+		"title": "Weekly /r/CryptoGuides Discussion - December 08, 2017",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"54": {
+		"created": "2017-12-02 16:25:09",
+		"title": "Setting up your Ledger Nano S: how to test your 24 word backup to ensure this works before using the device.",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"55": {
+		"created": "2017-12-01 14:35:52",
+		"title": "Weekly /r/CryptoGuides Discussion - December 01, 2017",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"56": {
+		"created": "2017-11-24 14:35:41",
+		"title": "Weekly /r/CryptoGuides Discussion - November 24, 2017",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"57": {
+		"created": "2017-11-21 21:47:48",
+		"title": "How to make MyEtherWallet safer & easier to use",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"58": {
+		"created": "2017-10-23 18:29:02",
+		"title": "Need guide please - ELI5 level type of guide on Bitcoint / Crypto / Ethereum",
+		"num_comments": 15,
+		"upvote_ratio": 0.67,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": [["2017-10-24 09:21:04", "Do you mean an explanation?", 1], ["2017-10-24 22:08:46", "There really can't be a useful ELI5 guide to crypto.  There is simply too much breadth and depth to cover, and you end up sacrificing so much when trying to make it simple that you end up not really explaining anything close to what crypto really is.\n\nMy recommendation is to take it in small chunks.  Are you a total noob to crypto?  Or do you get things like blockchain, mining, and decentralization already?", 1], ["2017-10-24 10:07:27", "Do I need thousands of dollars to get started?", 1], ["2017-10-25 00:26:30", "Actually I understand NONE of that whatsoever.\n\nSO can I ask you this question, how much money minimum can I get started to start playing with bitcoin?", 1], ["2017-10-25 00:32:00", "Any amount you want really.  Bitcoin is divisible up to 8 decimal places, so you can buy .00000001 BTC if you want (approximately $0.00006).  The smallest denomination of a Bitcoin is called a Satoshi, and you can see the current value of a Satoshi at https://99bitcoins.com/satoshi-usd-converter/.\n\nNow, there may be minimum limits depending on where you buy from, but it's totally reasonable to buy just a few dollars of Bitcoin.\n\nThe transaction fees of Bitcoin are higher than other cryptocurrencies like Ethereum and Litecoin though, so you may end up paying more in fees than the amount your sending is worth if it's under $5 or so.", 2], ["2017-10-25 00:32:42", "Feel free to ask me any question, and if you want to get input on Ethereum in particularly, the /r/Ethereumnoobies sub is a good place to post/read.", 1], ["2017-10-25 00:35:34", "So let's say hypothetically, I put in $500 (my best) next month out of my paycheck to bitcoin. What's that going to get me? And if the trends continues (bitcoin keeps going up) will that make me 'rich'?", 1], ["2017-10-25 00:36:17", "Would you say it's essential to learn more about bitcoin to understand ethereum? Meaning the road to understanding Ethereum is the same as bitcoin? ", 1], ["2017-10-25 00:41:42", "That's a super hard question to answer with any accuracy.  Nobody really knows where the price of crypto is going.  It's a global market, so stuff happening on the other side of the planet can significantly impact the price here.\n\nI can envision a 10k Bitcoin, even a 20k one.  If you bought $500 at a price lower than it is today ($6k), lets say at $5k, then you would get .1 BTC.  If BTC somehow hits 20k, you would 4x your investment and have 2k (if you just held).  \n\nI think Ethereum has much more potential for several reasons, and thus much more price increase potential.  \n\n", 1], ["2017-10-25 00:43:18", "Understanding blockchain will help you understand both Bitcoin and Ethereum (as well as pretty much all other cryptos), so I'd start there.  Once you get blockchain, focus on the details of bitcoin mining, then Ethereum mining.  You'll have a pretty good idea of how they compare at a fundamental level then, but now you can explore all the additional things Ethereum has to offer like smart contracts, DApps, and more.", 1], ["2017-10-25 00:52:24", "So where does one start to learn blockchain? Book? Linked? Threads?", 1], ["2017-10-25 01:21:16", "When you said start there (blockchain) is this a good place to start?\nhttps://www.reddit.com/r/BlockChain/\n\nAny other?", 1], ["2017-10-25 00:58:31", "All of the above really.  I would start with some kind of guide or compilation of info.  For Ethereum, [this](https://www.reddit.com/r/ethereum/comments/77gytn/welcome_to_rethereum_the_reddit_frontpage_of_the/) is a pretty great place to start.  It will have a lot more info than you need at first, but it's a good general reference.  \n\nRead through the top submissions of a crypto-related subreddit. For Ethereum: https://www.reddit.com/r/ethereumnoobies/top/\n\nThere are a lot of crypto bloggers on Medium and Steemit ([including me](https://steemit.com/@tomshwom)), so you can browse tags like https://steemit.com/trending/cryptocurrency and read through what people are posting about.\n\nFinally, there's a lot of youtubers out there who are great.  Here's a steemit post I made with lots of different resources for getting into crypto / ethereum: https://steemit.com/ethereum/@tomshwom/the-great-crypto-link-list", 1], ["2017-10-25 01:24:40", "I don't frequent that sub, but it looks active.  \n\nhttps://www.youtube.com/watch?v=bBC-nXj3Ng4 is a really good video about blockchain.  3blue1brown is awesome", 1]]
+	},
+	"59": {
+		"created": "2017-10-20 14:35:50",
+		"title": "Weekly /r/CryptoGuides Discussion - October 20, 2017",
+		"num_comments": 0,
+		"upvote_ratio": 0.76,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"60": {
+		"created": "2017-10-04 17:43:07",
+		"title": "How to add Ethereum tokens that aren't listed MyEtherWallet.",
+		"num_comments": 2,
+		"upvote_ratio": 0.76,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": [["2017-10-05 04:01:31", "Good stuff, just to be clear though - you don't need to generate the private key (aka create the wallet) in MEW. You can access **any** address through MEW as long as you know the private key (or higher level abstraction like seed phrases).", 2], ["2017-10-05 07:53:59", "Good point. I've clarified that in an edited version of the OP.", 2]]
+	},
+	"61": {
+		"created": "2017-10-02 18:20:34",
+		"title": "[Guide] The Blockchain Economy: A beginner's guide to institutional cryptoeconomics",
+		"num_comments": 0,
+		"upvote_ratio": 0.76,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"62": {
+		"created": "2017-09-29 14:35:45",
+		"title": "Weekly /r/CryptoGuides Discussion - September 29, 2017",
+		"num_comments": 2,
+		"upvote_ratio": 0.76,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": [["2017-09-29 22:42:25", "> this thread is not moderated\n\nDoes this mean we can meme here?", 1], ["2017-09-29 22:59:55", "Lol sure", 1]]
+	},
+	"63": {
+		"created": "2017-09-28 02:52:23",
+		"title": "[Guide] Best Cryptocurrency Exchanges - Ultimate Guide",
+		"num_comments": 0,
+		"upvote_ratio": 0.76,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"64": {
+		"created": "2017-09-26 01:48:20",
+		"title": "[Guide] Ethereum Metropolis Guide",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"65": {
+		"created": "2017-09-25 15:28:51",
+		"title": "Full ICO Guide For Crypto Investors",
+		"num_comments": 0,
+		"upvote_ratio": 0.76,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"66": {
+		"created": "2017-09-22 19:24:51",
+		"title": "[Guide] How To Get Live Prices on Google Sheets",
+		"num_comments": 0,
+		"upvote_ratio": 0.76,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"67": {
+		"created": "2017-09-22 19:21:33",
+		"title": "[Guide] Computer Hygiene Part 2 - Cleanup Software",
+		"num_comments": 0,
+		"upvote_ratio": 0.67,
+		"score": 2,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"68": {
+		"created": "2018-05-04 14:36:03",
+		"title": "Weekly /r/CryptoGuides Discussion - May 04, 2018",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"69": {
+		"created": "2018-04-27 14:36:02",
+		"title": "Weekly /r/CryptoGuides Discussion - April 27, 2018",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"70": {
+		"created": "2018-03-03 11:59:35",
+		"title": "Comprehensive list of crypto airdrops [Free coins]",
+		"num_comments": 0,
+		"upvote_ratio": 0.67,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"71": {
+		"created": "2018-01-31 11:02:52",
+		"title": "[Tutoriel] Parity : Vos premiers pas avec Ethereum",
+		"num_comments": 0,
+		"upvote_ratio": 0.6,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"72": {
+		"created": "2017-12-18 18:32:44",
+		"title": "[Meta] New sub theme - feedback?",
+		"num_comments": 0,
+		"upvote_ratio": 1.0,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"73": {
+		"created": "2017-10-05 15:02:01",
+		"title": "[Request] Exchange guide",
+		"num_comments": 0,
+		"upvote_ratio": 0.67,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"74": {
+		"created": "2017-10-01 02:51:59",
+		"title": "[Guide] Ethereum Byzantium Breakdown",
+		"num_comments": 0,
+		"upvote_ratio": 0.67,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"75": {
+		"created": "2017-09-28 18:11:29",
+		"title": "[Guide] Comprehensive Guide to KeePass (great for keeping crypto info secure)",
+		"num_comments": 0,
+		"upvote_ratio": 0.67,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"76": {
+		"created": "2017-09-22 19:25:43",
+		"title": "[Guide] Tips & Tricks for Getting in to ICOs Fast",
+		"num_comments": 0,
+		"upvote_ratio": 0.67,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"77": {
+		"created": "2017-09-22 19:23:42",
+		"title": "[Guide] Advanced Crypto Security Guide (Part 3) - Creating a Secure Wallet",
+		"num_comments": 0,
+		"upvote_ratio": 0.67,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"78": {
+		"created": "2017-09-22 19:23:18",
+		"title": "[Guide] Advanced Crypto Security Guide (Part 2) - Wallet Analysis",
+		"num_comments": 0,
+		"upvote_ratio": 0.67,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"79": {
+		"created": "2017-09-22 19:22:49",
+		"title": "[Guide] Advanced Crypto Security Guide (Part 1) - Privacy, Security, and Trust",
+		"num_comments": 0,
+		"upvote_ratio": 0.67,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"80": {
+		"created": "2017-09-22 19:22:05",
+		"title": "[Guide] Computer Hygiene Part 3 - Antivirus",
+		"num_comments": 0,
+		"upvote_ratio": 0.67,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	},
+	"81": {
+		"created": "2017-09-22 19:19:05",
+		"title": "[Guide] Computer Hygiene Part 1 - Browser Extensions",
+		"num_comments": 0,
+		"upvote_ratio": 0.67,
+		"score": 1,
+		"num_crossposts": 0,
+		"comments": []
+	}
+}
