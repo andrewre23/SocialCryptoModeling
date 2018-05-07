@@ -52,6 +52,15 @@ class RedditCollector(object):
             sub = SubredditObject(subreddit=subreddit)
             sub.extract_words_from_submissions()
 
+    def get_top_words(self, n):
+        """
+        Extract top n words from each of the submissions in the submissions files
+        """
+        for subreddit in self.get_subreddit_list():
+            print('Extracting top {} words from submissions for r/{}'.format(n, subreddit.capitalize()))
+            sub = SubredditObject(subreddit=subreddit)
+            sub.write_top_words(n)
+
 
 class SubredditObject(object):
     """
@@ -255,3 +264,16 @@ class SubredditObject(object):
             if counts[key] >= topcount:
                 output[key] = counts[key]
         return output
+
+    def write_top_words(self, n):
+        """
+        Read top n words from subreddit and write them to JSON file in topwords folder
+        """
+        words = self.get_top_words(n)
+        try:
+            output = dict()
+            output['words'] = words
+            with open('reddit/topwords/{}.json'.format(self.subreddit.display_name.lower()), 'w') as outfile:
+                json.dump(output, outfile)
+        except:
+            print("Error during top word extraction")
