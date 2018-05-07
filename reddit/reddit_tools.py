@@ -137,7 +137,7 @@ class SubredditObject(object):
                 # add to master list
                 all_subs[num + 1] = output
         except IndexError:
-            print('Max submissions reached')
+            print('Max submissions ({}) reached'.format(n))
 
         with open('reddit/submissions/{}.json'.format(self.subreddit.display_name.lower()), 'w') as outfile:
             json.dump(all_subs, outfile)
