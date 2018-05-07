@@ -146,8 +146,9 @@ class SubredditObject(object):
             raise ValueError("n must be integer larger than 0")
         submissions = self.get_top_submissions(n)
         all_subs = {}
-        try:
-            for num in range(n):
+
+        for num in range(n):
+            try:
                 # iterate through all submissions and extract information to
                 # write to JSON object
                 sub = submissions[num]
@@ -173,9 +174,10 @@ class SubredditObject(object):
                 output['comments'] = comments
                 # add to master list
                 all_subs[num + 1] = output
-        except IndexError:
-            # print error if subreddit has < n submissions in total
-            print('Max submissions ({}) reached'.format(n))
+            except IndexError:
+                # print error if subreddit has < n submissions in total
+                print('Max submissions ({}) reached'.format(num))
+                break
 
         with open('reddit/submissions/{}.json'.format(self.subreddit.display_name.lower()), 'w') as outfile:
             json.dump(all_subs, outfile)
