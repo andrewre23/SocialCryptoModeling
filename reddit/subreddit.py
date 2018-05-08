@@ -1,9 +1,10 @@
 # import praw
 
-from datetime import datetime
+import re
 import json
-import configparser
 import praw
+import configparser
+from datetime import datetime
 from nltk.corpus import stopwords
 
 config = configparser.ConfigParser()
@@ -14,6 +15,7 @@ client_secret = 'hWDqk5ZpXrc5BISDQUl7ZbPysgc'
 user_agent = 'socialcryptomodeling:socialcryptomodeling:1.0.0 (by /u/socialcryptomodeling)'
 
 sw = stopwords.words('english')
+
 
 class SubredditTool(object):
     """
@@ -123,14 +125,14 @@ class SubredditTool(object):
         """
         try:
             with open('reddit/submissions/{}.json'.format(self.subreddit.display_name.lower())) as f:
-                return (json.load(f))
+                return json.load(f)
         except FileNotFoundError:
             # error if file not found in submissions folder
             print('Error: submission file not found for {}'.format(self.subreddit.display_name.lower()))
 
-    def write_words_from_submissions(self):
+    def read_raw_words_from_submissions(self):
         """
-        Extract all words for processing from previous submission data
+        Return list of raw words from
         """
         subs = self.read_top_submissions()
         try:
@@ -146,13 +148,43 @@ class SubredditTool(object):
                     com = comments[comnum]
                     for word in com[1].split():
                         words.append(word.strip().lower())
-            data = dict()
-            data['words'] = words
-
-            with open('reddit/cleanedwords/{}.json'.format(self.subreddit.display_name.lower()), 'w') as outfile:
-                json.dump(data, outfile)
+            return words
         except:
             print("Error during word extraction")
+
+    def append_regex_field(self, pattern=None, fieldname=None):
+        """
+        Append all strings matching regex pattern to extractions file
+        """
+        if not (pattern is not None and fieldname is not None and
+                type(pattern) == str and type(fieldname) == str):
+            raise ValueError('Error with parameters')
+        words = self.read_raw_words_from_submissions()
+        try:
+            with open('reddit/extractions/{}.json'.format(self.subreddit.display_name.lower())) as f:
+                data = json.load(f)
+        except FileNotFoundError:
+            # error if file not found in cleanedwords folder
+            print('Warning: file of extracts not found for {}'.format(self.subreddit.display_name.lower()))
+            print('Creating file for {}'.format(self.subreddit.display_name.lower()))
+            open('reddit/extractions/{}.json'.format(self.subreddit.display_name.lower()), 'w').close()
+            data = dict()
+        except json.JSONDecodeError:
+            print('Warning: blank extract file')
+            data = dict()
+        output = re.findall(pattern, ' '.join(words))
+        data.update({fieldname: output})
+        with open('reddit/extractions/{}.json'.format(self.subreddit.display_name.lower()), 'w') as outfile:
+            json.dump(data, outfile)
+
+    def write_words_from_submissions(self):
+        """
+        Extract all words for processing from previous submission data
+        """
+        output = dict()
+        output['words'] = self.read_raw_words_from_submissions()
+        with open('reddit/cleanedwords/{}.json'.format(self.subreddit.display_name.lower()), 'w') as outfile:
+            json.dump(output, outfile)
 
     def read_words_from_submissions(self):
         """
@@ -160,7 +192,7 @@ class SubredditTool(object):
         """
         try:
             with open('reddit/cleanedwords/{}.json'.format(self.subreddit.display_name.lower())) as f:
-                return (json.load(f))
+                return json.load(f)
         except FileNotFoundError:
             # error if file not found in cleanedwords folder
             print('Error: file of words not found for {}'.format(self.subreddit.display_name.lower()))
@@ -218,7 +250,7 @@ class SubredditTool(object):
         """
         try:
             with open('reddit/topwords/{}.json'.format(self.subreddit.display_name.lower())) as f:
-                return (json.load(f))
+                return json.load(f)
         except FileNotFoundError:
             # error if file not found in cleanedwords folder
             print('Error: file of words not found for {}'.format(self.subreddit.display_name.lower()))
