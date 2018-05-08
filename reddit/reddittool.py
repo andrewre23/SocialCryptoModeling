@@ -43,7 +43,7 @@ class RedditTool(object):
         for subreddit in self.get_subreddit_list():
             print('Extracting words from submissions for r/{}'.format(subreddit.capitalize()))
             sub = SubredditTool(subreddit=subreddit)
-            sub.extract_words_from_submissions()
+            sub.write_words_from_submissions()
 
     def get_top_words(self, n):
         """
