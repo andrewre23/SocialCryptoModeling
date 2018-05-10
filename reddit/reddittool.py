@@ -1,5 +1,5 @@
 import configparser
-from .subreddit import SubredditTool
+from .subreddittool import SubredditTool
 
 config = configparser.ConfigParser()
 config.read('./mydata.cfg')
@@ -53,3 +53,12 @@ class RedditTool(object):
             print('Extracting top {} words from submissions for r/{}'.format(n, subreddit.capitalize()))
             sub = SubredditTool(subreddit=subreddit)
             sub.write_top_words(n)
+
+    def get_google_trends(self):
+        """
+        Extract Google trends JSON files for all top words currently extracted
+        """
+        for subreddit in self.get_subreddit_list():
+            print('Extracting Google Trend Data for top words from r/{}'.format(subreddit.capitalize()))
+            sub = SubredditTool(subreddit=subreddit)
+            sub.write_google_trends()

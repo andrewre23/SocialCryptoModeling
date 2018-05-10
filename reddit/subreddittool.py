@@ -4,8 +4,11 @@ import re
 import json
 import praw
 import configparser
-from datetime import datetime
+from datetime import date, datetime, timedelta
 from nltk.corpus import stopwords
+from pandas import DataFrame
+from pytrends.request import TrendReq
+from pytrends.exceptions import ResponseError
 
 config = configparser.ConfigParser()
 config.read('./mydata.cfg')
@@ -15,6 +18,8 @@ client_secret = 'hWDqk5ZpXrc5BISDQUl7ZbPysgc'
 user_agent = 'socialcryptomodeling:socialcryptomodeling:1.0.0 (by /u/socialcryptomodeling)'
 
 sw = stopwords.words('english')
+
+STARTDATE = '2013-08-01 '
 
 
 class SubredditTool(object):
@@ -254,3 +259,24 @@ class SubredditTool(object):
         except FileNotFoundError:
             # error if file not found in cleanedwords folder
             print('Error: file of words not found for {}'.format(self.subreddit.display_name.lower()))
+
+    def write_google_trends(self):
+        """
+        Get Google Trends data for top words in topwords folder
+        """
+        topwords = self.read_top_words()['words']
+        trends = TrendReq(hl='en-US', tz=360)
+        df = DataFrame()
+        for word in sorted(topwords, key=topwords.get, reverse=True):
+            kw_list = [word]
+            yesterday = (date.today() - timedelta(days=1)).strftime('%Y-%m-%d')
+            searchdate = STARTDATE + yesterday
+            try:
+                trends.build_payload(kw_list, cat=0, timeframe=searchdate, geo='', gprop='')
+                results = trends.interest_over_time()
+                trendresults = results[results.columns[0]]
+                df[word] = trendresults
+            except ResponseError:
+                print('Error retrieving data for "{}"'.format(word))
+                continue
+        df.to_json('google/trends/{}.json'.format(self.subreddit.display_name.lower()))
