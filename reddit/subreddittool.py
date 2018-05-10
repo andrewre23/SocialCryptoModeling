@@ -266,11 +266,11 @@ class SubredditTool(object):
         """
         topwords = self.read_top_words()['words']
         trends = TrendReq(hl='en-US', tz=360)
+        yesterday = (date.today() - timedelta(days=1)).strftime('%Y-%m-%d')
+        searchdate = STARTDATE + yesterday
         df = DataFrame()
         for word in sorted(topwords, key=topwords.get, reverse=True):
             kw_list = [word]
-            yesterday = (date.today() - timedelta(days=1)).strftime('%Y-%m-%d')
-            searchdate = STARTDATE + yesterday
             try:
                 trends.build_payload(kw_list, cat=0, timeframe=searchdate, geo='', gprop='')
                 results = trends.interest_over_time()
