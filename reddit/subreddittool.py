@@ -280,3 +280,33 @@ class SubredditTool(object):
                 print('Error retrieving data for "{}"'.format(word))
                 continue
         df.to_json('google/trends/{}.json'.format(self.subreddit.display_name.lower()))
+
+    def extract_stats_on_submissions(self):
+        """
+        Extract statistics on submissions and write them out to JSON file
+        """
+        subs = self.read_top_submissions()
+        top = self.read_top_words()
+        output = dict()
+        for num in range(len(subs.keys())):
+            sub = subs[str(num + 1)]
+            temp = dict()
+            numwords = 0
+            numtops = 0
+            temp['title'] = sub['title']
+            temp['created'] = sub['created']
+            # iterate through all comments
+            comments = sorted(sub['comments'], key=lambda x: x[0])
+            for t, com, score in comments:
+                for word in com.split():
+                    if word.strip().lower() in top:
+                        numtops += 1
+                    numwords += 1
+            temp['numwords'] = numwords
+            temp['topwords'] = numtops
+            output[num] = temp
+        try:
+            with open('reddit/submissionanalysis/{}.json'.format(self.subreddit.display_name.lower()), 'w') as outfile:
+                json.dump(output, outfile)
+        except:
+            print("Error during stats extraction")
