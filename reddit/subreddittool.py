@@ -279,6 +279,9 @@ class SubredditTool(object):
             except ResponseError:
                 print('Error retrieving data for "{}"'.format(word))
                 continue
+            except IndexError:
+                print('Error retrieving data for "{}"'.format(word))
+                continue
         df.to_json('google/trends/{}.json'.format(self.subreddit.display_name.lower()))
 
     def extract_stats_on_submissions(self):
