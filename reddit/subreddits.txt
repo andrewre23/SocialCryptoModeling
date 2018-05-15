@@ -6,6 +6,7 @@ bitcoinmarkets
 bitcoinmining
 bitcointechnology
 bitcointrading
+btc
 cryptocurrency
 cryptomarkets
 cryptotrade
