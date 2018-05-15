@@ -292,9 +292,12 @@ class SubredditTool(object):
         top = self.read_top_words()
         output = dict()
         for num in range(len(subs.keys())):
+            # iterate through all submissions
             sub = subs[str(num + 1)]
             temp = dict()
+            # number of words in submission
             numwords = 0
+            # number of words in submission from list of top n words
             numtops = 0
             temp['title'] = sub['title']
             temp['created'] = sub['created']
