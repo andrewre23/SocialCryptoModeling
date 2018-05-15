@@ -54,6 +54,15 @@ class RedditTool(object):
             sub = SubredditTool(subreddit=subreddit)
             sub.write_top_words(n)
 
+    def get_submission_stats(self):
+        """
+        Extract stats from each of the submissions in the top n submissions files
+        """
+        for subreddit in self.get_subreddit_list():
+            print('Extracting stats from submissions for r/{}'.format(subreddit.capitalize()))
+            sub = SubredditTool(subreddit=subreddit)
+            sub.extract_stats_on_submissions()
+
     def get_google_trends(self):
         """
         Extract Google trends JSON files for all top words currently extracted
