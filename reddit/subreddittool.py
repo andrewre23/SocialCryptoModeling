@@ -81,6 +81,12 @@ class SubredditTool(object):
         """
         return datetime.utcfromtimestamp(utc_time)
 
+    def convert_to_datetime(self, inputdt):
+        """
+        Return datetime object with date for parameter
+        """
+        return datetime.strptime(inputdt, DATEFORMAT)
+
     def write_top_submissions(self, n):
         """
         Write JSON file that contains all n top submissions for subreddit
@@ -312,12 +318,12 @@ class SubredditTool(object):
                         numtops += 1
                     numwords += 1
                 if i == 0:
-                    start = datetime.strptime(sub['created'],DATEFORMAT)
-                    first = datetime.strptime(t,DATEFORMAT)
-                    intertimes.append(str(first-start))
+                    start = self.convert_to_datetime(sub['created'])
+                    first = self.convert_to_datetime(t)
+                    intertimes.append(str(first - start))
                 else:
-                    last = datetime.strptime(comments[i-1][0],DATEFORMAT)
-                    curr = datetime.strptime(t,DATEFORMAT)
+                    last = self.convert_to_datetime(comments[i - 1][0])
+                    curr = self.convert_to_datetime(t)
                     intertimes.append(str(curr - last))
             temp['numwords'] = numwords
             temp['topwords'] = numtops
