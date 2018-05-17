@@ -20,6 +20,7 @@ user_agent = 'socialcryptomodeling:socialcryptomodeling:1.0.0 (by /u/socialcrypt
 sw = stopwords.words('english')
 
 STARTDATE = '2013-08-01 '
+DATEFORMAT = "%Y-%m-%d %H:%M:%S"
 
 
 class SubredditTool(object):
@@ -302,14 +303,25 @@ class SubredditTool(object):
             temp['title'] = sub['title']
             temp['created'] = sub['created']
             # iterate through all comments
+            intertimes = []
             comments = sorted(sub['comments'], key=lambda x: x[0])
-            for t, com, score in comments:
+            for i, tup in enumerate(comments):
+                t, com, score = tup[0], tup[1], tup[2]
                 for word in com.split():
                     if word.strip().lower() in top:
                         numtops += 1
                     numwords += 1
+                if i == 0:
+                    start = datetime.strptime(sub['created'],DATEFORMAT)
+                    first = datetime.strptime(t,DATEFORMAT)
+                    intertimes.append(str(first-start))
+                else:
+                    last = datetime.strptime(comments[i-1][0],DATEFORMAT)
+                    curr = datetime.strptime(t,DATEFORMAT)
+                    intertimes.append(str(curr - last))
             temp['numwords'] = numwords
             temp['topwords'] = numtops
+            temp['intertimes'] = intertimes
             output[num] = temp
         try:
             with open('reddit/submissionanalysis/{}.json'.format(self.subreddit.display_name.lower()), 'w') as outfile:
