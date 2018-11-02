@@ -106,6 +106,11 @@ class SubredditTool(object):
                 # add submission-level data to output data
                 output['created'] = str(self.convert_from_utc(sub.created_utc))
                 output['title'] = sub.title
+                try:
+                    author = sub.author.name
+                except AttributeError:
+                    author = ''
+                output['author'] = author
                 output['num_comments'] = sub.num_comments
                 output['upvote_ratio'] = sub.upvote_ratio
                 output['score'] = sub.score
@@ -114,12 +119,18 @@ class SubredditTool(object):
                 sub.comments.replace_more(limit=n)
                 # comment field to be list of tuples containing:
                 # (time created / comment body / comment score)
-                comments = [
-                    (str(self.convert_from_utc(comment.created)),
-                     comment.body,
-                     comment.score)
-                    for comment in sub.comments.list()
-                ]
+                try:
+
+                    comments = [
+                        (str(self.convert_from_utc(comment.created)),
+                         comment.author.name,           # author name
+                         comment.body,                  # body of post
+                         comment.score,                 # score of post
+                         int(comment.is_submitter))     # 0/1 if author is submitter of post
+                        for comment in sub.comments.list()
+                    ]
+                except AttributeError:
+                    comments = []                   # handle error if no comments
                 output['comments'] = comments
                 # add to master list
                 all_subs[num + 1] = output
@@ -144,7 +155,7 @@ class SubredditTool(object):
 
     def read_raw_words_from_submissions(self):
         """
-        Return list of raw words from
+        Return list of raw words from all submissions
         """
         subs = self.read_top_submissions()
         try:
@@ -235,7 +246,9 @@ class SubredditTool(object):
                 counts[word] = allwords[word]
         # first, determine word at nth position
         sortedcounts = sorted(counts, key=counts.get, reverse=True)
-        topcount = counts[sortedcounts[n - 1]]
+        # lower index of topcount
+        max_index = min(len(sortedcounts), n) - 1
+        topcount = counts[sortedcounts[max_index]]
         output = {}
         # select subset of words with >= topcount instances
         for key in counts.keys():
