@@ -1,4 +1,6 @@
 import configparser
+
+from pandas import DataFrame
 from .subreddittool import SubredditTool
 
 config = configparser.ConfigParser()
@@ -71,3 +73,74 @@ class RedditTool(object):
             print('Extracting Google Trend Data for top words from r/{}'.format(subreddit.capitalize()))
             sub = SubredditTool(subreddit=subreddit)
             sub.write_google_trends()
+
+    def get_submission_dataset(self):
+        """
+        Extract descriptive stats on submission file
+        """
+
+        # initialize containers
+        sub_list = []
+        sub_count = []
+        word_count = []
+        com_count = []
+        early = []
+        mid = []
+        late = []
+
+        for subreddit in self.get_subreddit_list():
+            print('Getting descriptive stats for r/{}'.format(subreddit.capitalize()))
+
+            # create subreddit object and read in data
+            sub = SubredditTool(subreddit=subreddit)
+            submissions = sub.read_top_submissions()
+
+            # add subreddit name to list
+            sub_list.append(subreddit.capitalize())
+            sub_count.append(len(submissions))
+            word_count.append(len(sub.read_raw_words_from_submissions()))
+
+            # initialize containers
+            comments = []
+            timestamps = []
+            for num in range(len(submissions.keys())):
+                sub = submissions[str(num + 1)]
+                # iterate through all words in title
+                comments.append(len(sub['comments']))
+                timestamps.append(sub['created'])
+            com_count.append(sum(comments))
+
+            # sort list of timestamps
+            timestamps = sorted(timestamps)
+
+            # get earliest timestamps
+            try:
+                early.append(timestamps[0])
+            except IndexError:
+                early.append(None)
+            # get latest timestamps
+            try:
+                late.append(timestamps[-1])
+            except IndexError:
+                late.append(None)
+            # get mid-point timestamps
+            try:
+                i = len(timestamps)
+                # get number of timestamps and find midpoint index
+                mid_pt = int(i / 2)
+                mid.append(timestamps[mid_pt])
+            except IndexError:
+                mid.append(None)
+
+        df = DataFrame({
+            'subreddit': sub_list,
+            'num_submissions': sub_count,
+            'num_words' : word_count,
+            'num_comments': com_count,
+            'early_post': early,
+            'mid_post': mid,
+            'late_post': late
+        })
+        # writes stats file to CSV
+        print('Writing descritpive stats file')
+        df.to_csv('reddit/submission_stats.csv', index=False)
