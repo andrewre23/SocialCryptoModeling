@@ -135,7 +135,7 @@ class SubredditTool(object):
                     comments = []                   # handle error if no comments
                 output['comments'] = comments
                 # add to master list
-                all_subs[num + 1] = output
+                all_subs[num] = output
             except IndexError:
                 # print error if subreddit has < n submissions in total
                 print('Max submissions ({}) reached'.format(num))
