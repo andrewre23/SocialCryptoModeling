@@ -111,18 +111,20 @@ class SubredditTool(object):
                 except AttributeError:
                     author = ''
                 output['author'] = author
+                output['id'] = sub.id
                 output['num_comments'] = sub.num_comments
                 output['upvote_ratio'] = sub.upvote_ratio
                 output['score'] = sub.score
                 output['num_crossposts'] = sub.num_crossposts
                 # create comment section and add all comments
-                sub.comments.replace_more(limit=n)
+                sub.comments.replace_more(limit=None)
                 # comment field to be list of tuples containing:
                 # (time created / comment body / comment score)
                 try:
 
                     comments = [
                         (str(self.convert_from_utc(comment.created)),
+                         comment.id,                    # comment ID
                          comment.author.name,           # author name
                          comment.body,                  # body of post
                          comment.score,                 # score of post
