@@ -104,7 +104,7 @@ class RedditTool(object):
             comments = []
             timestamps = []
             for num in range(len(submissions.keys())):
-                sub = submissions[str(num + 1)]
+                sub = submissions[str(num)]
                 # iterate through all words in title
                 comments.append(len(sub['comments']))
                 timestamps.append(sub['created'])

@@ -161,10 +161,12 @@ class SubredditTool(object):
         Return list of raw words from all submissions
         """
         subs = self.read_top_submissions()
-        try:
-            words = []
-            for num in range(len(subs.keys())):
-                sub = subs[str(num + 1)]
+
+        words = []
+
+        for num in range(len(subs.keys())):
+            try:
+                sub = subs[str(num)]
                 # iterate through all words in title
                 for word in sub['title'].split():
                     words.append(word.strip().lower())
@@ -172,11 +174,11 @@ class SubredditTool(object):
                 comments = sub['comments']
                 for comnum in range(len(comments)):
                     com = comments[comnum]
-                    for word in com[1].split():
+                    for word in com[3].split():
                         words.append(word.strip().lower())
-            return words
-        except:
-            print("Error during word extraction")
+            except:
+                print("Error during word extraction")
+        return words
 
     def append_regex_field(self, pattern=None, fieldname=None):
         """
