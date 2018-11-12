@@ -97,6 +97,8 @@ class SubredditTool(object):
         all_subs = {}
 
         for num in range(n):
+            if num % 100 == 0 and num > 0:                                  # print every 100th submission
+                print('gathering submission #{}'.format(num))
             try:
                 # iterate through all submissions and extract information to
                 # write to JSON object
@@ -120,20 +122,19 @@ class SubredditTool(object):
                 sub.comments.replace_more(limit=None)
                 # comment field to be list of tuples containing:
                 # (time created / comment body / comment score)
-                try:
-
-                    comments = [
-                        (str(self.convert_from_utc(comment.created)),
-                         comment.id,                    # comment ID
-                         comment.author.name,           # author name
-                         comment.body,                  # body of post
-                         comment.score,                 # score of post
-                         int(comment.is_submitter))     # 0/1 if author is submitter of post
-                        for comment in sub.comments.list()
-                    ]
-                except AttributeError:
-                    comments = []                   # handle error if no comments
-                output['comments'] = comments
+                all_comments = []
+                for comment in sub.comments.list():
+                    try:
+                        com = (str(self.convert_from_utc(comment.created)),
+                             comment.id,                    # comment ID
+                             comment.author.name,           # author name
+                             comment.body,                  # body of post
+                             comment.score,                 # score of post
+                             int(comment.is_submitter))     # 0/1 if author is submitter of post
+                    except AttributeError:
+                        com = ()                   # handle error if no comments
+                    if com: all_comments.append(com)
+                output['comments'] = all_comments
                 # add to master list
                 all_subs[num] = output
             except IndexError:
