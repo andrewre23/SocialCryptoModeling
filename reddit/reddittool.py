@@ -29,14 +29,14 @@ class RedditTool(object):
                 subreddits.append(line.strip())
         return subreddits
 
-    def get_top_submissions(self, n):
+    def get_top_submissions(self, n, filter=filter):
         """
         Write JSON file for top n submissions for each subreddit in subreddits.txt
         """
         for subreddit in self.get_subreddit_list():
             print('Extracting top {} submissions for r/{}'.format(n, subreddit.capitalize()))
             sub = SubredditTool(subreddit=subreddit)
-            sub.write_top_submissions(n)
+            sub.write_top_submissions(n, filter=filter)
 
     def get_submission_words(self):
         """

@@ -87,13 +87,13 @@ class SubredditTool(object):
         """
         return datetime.strptime(inputdt, DATEFORMAT)
 
-    def write_top_submissions(self, n):
+    def write_top_submissions(self, n, filter='all'):
         """
         Write JSON file that contains all n top submissions for subreddit
         """
         if not (type(n) == int and n > 0):
             raise ValueError("n must be integer larger than 0")
-        submissions = self.get_top_submissions(n)
+        submissions = self.get_top_submissions(n, filter=filter)
         all_subs = {}
 
         for num in range(n):
