@@ -130,7 +130,9 @@ class SubredditTool(object):
                              comment.author.name,           # author name
                              comment.body,                  # body of post
                              comment.score,                 # score of post
-                             int(comment.is_submitter))     # 0/1 if author is submitter of post
+                             int(comment.is_submitter),     # 0/1 if author is submitter of post
+                             comment.link_id,
+                             comment.parent_id)
                     except AttributeError:
                         com = ()                   # handle error if no comments
                     if com: all_comments.append(com)
