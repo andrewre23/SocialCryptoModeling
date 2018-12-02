@@ -114,6 +114,10 @@ class SubredditTool(object):
                     author = ''
                 output['author'] = author
                 output['id'] = sub.id
+                try:
+                    output['body'] = sub.selftext
+                except:
+                    output['body'] = ''
                 output['num_comments'] = sub.num_comments
                 output['upvote_ratio'] = sub.upvote_ratio
                 output['score'] = sub.score
